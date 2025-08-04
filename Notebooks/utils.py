@@ -11,18 +11,23 @@ console = Console()
 
 def format_message_content(message):
     """Convert message content to displayable string"""
-    if isinstance(message.content, str):
+    if isinstance(message.content, str) and len(message.content.strip()) > 0:
         return message.content
-    elif isinstance(message.content, list):
+    elif isinstance(message.content, str) and len(message.content) == 0:
         # Handle complex content like tool calls
         parts = []
-        for item in message.content:
-            if item.get('type') == 'text':
-                parts.append(item['text'])
-            elif item.get('type') == 'tool_use':
-                parts.append(f"\n🔧 Tool Call: {item['name']}")
-                parts.append(f"   Args: {json.dumps(item['input'], indent=2)}")
-        return "\n".join(parts)
+        try:
+        
+            for item in message.tool_calls:
+
+                if item.get('type') == 'text':
+                    parts.append(item['text'])
+                elif item.get('type') == 'tool_call':
+                    parts.append(f"\n🔧 Tool Call: {item['name']}")
+                    parts.append(f"   Args: {json.dumps(item['args'], indent=2)}")
+            return "\n".join(parts)
+        except:
+            return str(message.content)
     else:
         return str(message.content)
 

@@ -223,6 +223,7 @@ dependencies = [
     { name = "langchain-community" },
     { name = "langchain-google-genai" },
     { name = "langgraph" },
+    { name = "langgraph-bigtool" },
     { name = "pandas" },
     { name = "rich" },
     { name = "tiktoken" },
@@ -237,6 +238,7 @@ requires-dist = [
     { name = "langchain-community", specifier = ">=0.3.27" },
     { name = "langchain-google-genai", specifier = ">=2.1.8" },
     { name = "langgraph", specifier = ">=0.6.3" },
+    { name = "langgraph-bigtool", specifier = ">=0.0.3" },
     { name = "pandas", specifier = ">=2.3.1" },
     { name = "rich", specifier = ">=14.1.0" },
     { name = "tiktoken", specifier = ">=0.9.0" },
@@ -744,6 +746,18 @@ dependencies = [
 sdist = { url = "https://files.pythonhosted.org/packages/7d/d8/ecedf01b3e90ad288343eeb06d91d8511e049ee0b16d7f3c146baeed2a49/langgraph-0.6.3.tar.gz", hash = "sha256:0d2280d295133dc34ccc12eae1ad4d82ee847b009c59801de418068fa9248e1b", size = 452277, upload-time = "2025-08-03T11:21:35.74Z" }
 wheels = [
     { url = "https://files.pythonhosted.org/packages/bb/93/7836486f6c18b0b11e6bde5bc0f318947e610637aa5231081bd4adf79eb9/langgraph-0.6.3-py3-none-any.whl", hash = "sha256:733efd8c59b9915e582619da40f2ab5ebb121319a4d7718adef82d6db07547eb", size = 152463, upload-time = "2025-08-03T11:21:34.002Z" },
+]
+
+[[package]]
+name = "langgraph-bigtool"
+version = "0.0.3"
+source = { registry = "https://pypi.org/simple" }
+dependencies = [
+    { name = "langgraph" },
+]
+sdist = { url = "https://files.pythonhosted.org/packages/6a/e0/89146c9f26480d86f73328ba642c41f4e543d5ded5ab7147a09359958085/langgraph_bigtool-0.0.3.tar.gz", hash = "sha256:f0caa0d9322487b7bb53f97177f16a45322946f48d2eba80c7f1e93b3c1d51e5", size = 11532, upload-time = "2025-06-03T17:45:19.39Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/29/68/973db3b37fcd262f9685d2b0449927fc1b847d5ed1b9c08fc4f8146aa553/langgraph_bigtool-0.0.3-py3-none-any.whl", hash = "sha256:7535c924708ca7ecfccaf57b582db331cf8f21a3cd30b60abc912a7aa0db7594", size = 8717, upload-time = "2025-06-03T17:45:18.147Z" },
 ]
 
 [[package]]
